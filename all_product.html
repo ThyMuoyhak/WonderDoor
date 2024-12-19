@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wonder Door Industrial</title>
+  <link rel="icon" href=
+"https://scontent.fpnh18-1.fna.fbcdn.net/v/t39.30808-6/302914497_481358577333416_4386004164508209901_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGdjjAH80KxU6CnJNxofZwh4276SXpnYwPjbvpJemdjA_I40UwbJNjjx9FEcs1wtaRqZJNAL0iswt9QMXNtU0px&_nc_ohc=B0SBLVeSjgAQ7kNvgHxvcy2&_nc_oc=AdiyHjRp-Ah5xym_aaxh7FWrmQ8c1_xfMJQChWCIqoiAbSuzq4lRHvfBEg5Hjkl9i98&_nc_zt=23&_nc_ht=scontent.fpnh18-1.fna&_nc_gid=AdiQ-PNDqBO6tj0hfgqM-1q&oh=00_AYC9SPwprokKP9dq79bS5AmE81MAe8UaWv_8gYiXfhExLw&oe=6768ED5D"
+        type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Add Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script src="api.js"></script>
+  <link rel="stylesheet" href="font.css">
+</head>
+<body class="bg-gray-100 ">
+   <!-- Load Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<!-- Top Header Location -->
+<div class="bg-gray-800 text-white py-2">
+  <div class="container mx-auto px-4 flex flex-wrap justify-between items-center">
+    <!-- Location Info -->
+    <div class="text-sm mb-2 sm:mb-0 w-full sm:w-auto flex items-center space-x-2">
+      <i class="fas fa-map-marker-alt text-blue-400"></i>
+      <span>Location: Phnom Penh, Cambodia</span>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="text-sm flex space-x-6 w-full sm:w-auto justify-center sm:justify-end">
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-phone text-blue-400"></i>
+        <span>Call Us: <a href="tel:+123456789" class="hover:text-blue-400">+123 456 789</a></span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-envelope text-blue-400"></i>
+        <span>Email: <a href="mailto:info@wonderdoor.com" class="hover:text-blue-400">info@wonderdoor.com</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-4 flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="text-2xl font-bold text-blue-600">
+        <a href="index.html">Wonder Door Industrial</a>
+      </div>
+
+      <!-- Navigation Links for Desktop -->
+      <ul class="hidden md:flex space-x-6">
+        <li>
+          <a href="index.html" class="nav-link text-gray-600 hover:text-blue-600">Home</a>
+        </li>
+        <li>
+          <a href="about.html" class="nav-link text-gray-600 hover:text-blue-600">About</a>
+        </li>
+        <li>
+          <a href="all_product.html" class="nav-link text-gray-600 hover:text-blue-600">Products</a>
+        </li>
+        <li>
+          <a href="contact.html" class="nav-link text-gray-600 hover:text-blue-600">Contact</a>
+        </li>
+      </ul>
+
+    <!-- Mobile Search Icon (Visible on mobile and tablets) -->
+<div id="search-icon" class="lg:hidden flex items-center cursor-pointer">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 text-gray-700">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 19l-4-4m2-5a7 7 0 10-14 0 7 7 0 0014 0z" />
+  </svg>
+</div>
+  
+  
+      <!-- Search Input (Hidden by default, shown when search icon is clicked) -->
+  <div id="search-container" class="relative hidden lg:flex items-center">
+    <input 
+      type="text" 
+      id="search-main-input" 
+      class="border border-gray-300 rounded-l-lg px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 text-gray-700"
+      placeholder="Search products..."
+    />
+    <button 
+      id="search-main-btn" 
+      class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700 focus:outline-none flex items-center justify-center"
+    >
+      <h2>Search</h2>
+    </button>
+  </div>
+  
+  <!-- Sliding Search Bar (Visible when activated on mobile and tablets) -->
+  <div id="sliding-search-bar" class="fixed top-0 left-0 w-full bg-white shadow-lg p-4 hidden transform -translate-y-full transition-transform duration-500 ease-in-out">
+    <div class="flex items-center">
+      <input 
+        type="text" 
+        id="search-slide-input" 
+        class="border border-gray-300 rounded-l-lg px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 text-gray-700"
+        placeholder="Search products..."
+      />
+      <button 
+        id="search-slide-btn" 
+        class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700 focus:outline-none"
+      >
+        <h2>Search</h2>
+      </button>
+    </div>
+  </div>
+    
+  
+    <!-- Hamburger Icon -->
+    <button id="menu-btn" class="md:hidden flex flex-col space-y-1">
+      <span class="block w-6 h-0.5 bg-gray-600"></span>
+      <span class="block w-6 h-0.5 bg-gray-600"></span>
+      <span class="block w-6 h-0.5 bg-gray-600"></span>
+    </button>
+</nav>
+
+      
+    <!-- Mobile Sidebar Menu -->
+<div
+id="mobile-menu"
+class="fixed top-0 right-0 w-3/4 max-w-xs h-full bg-white shadow-md transform translate-x-full transition-transform duration-300 ease-in-out"
+>
+<!-- Close Button with Larger Icon -->
+<button id="close-btn" class="absolute top-6 right-6 text-4xl text-gray-600 hover:text-gray-800 transition duration-300">
+  &times;
+</button>
+
+<!-- Menu Links with Larger Text -->
+<ul class="space-y-6 px-6 py-16">
+  <li>
+    <a href="index.html" class="block text-2xl text-gray-600 hover:text-blue-600 font-semibold transition duration-200">Home</a>
+  </li>
+  <li>
+    <a href="about.html" class="block text-2xl text-gray-600 hover:text-blue-600 font-semibold transition duration-200">About</a>
+  </li>
+  <li>
+    <a href="all_product.html" class="block text-2xl text-gray-600 hover:text-blue-600 font-semibold transition duration-200">Products</a>
+  </li>
+  <li>
+    <a href="contact.html" class="block text-2xl text-gray-600 hover:text-blue-600 font-semibold transition duration-200">Contact</a>
+  </li>
+</ul>
+</div>
+<!-- Dots Indicator -->
+<div class=" bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-3">
+    <span class="dot w-4 h-4 sm:w-6 sm:h-6 bg-gray-300 rounded-full opacity-70 hover:opacity-100 transition-opacity duration-300"></span>
+    <span class="dot w-4 h-4 sm:w-6 sm:h-6 bg-gray-300 rounded-full opacity-70 hover:opacity-100 transition-opacity duration-300"></span>
+    <span class="dot w-4 h-4 sm:w-6 sm:h-6 bg-gray-300 rounded-full opacity-70 hover:opacity-100 transition-opacity duration-300"></span>
+  </div>
+  
+<!-- Container to hold the product card -->
+<div class="flex items-center justify-center">
+    <div id="product-container" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 max-w-screen-lg">
+      <!-- Product cards will be dynamically inserted here -->
+    </div>
+</div>
+
+<footer class="bg-gray-800 text-gray-300 py-10">
+  <div class="container mx-auto px-4">
+    <!-- Footer Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Company Info -->
+      <div>
+        <h3 class="text-xl font-bold text-white mb-4">Wonder Door Industrial</h3>
+        <p class="text-gray-400">
+          Delivering quality products and exceptional services worldwide. Your satisfaction is our priority.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-blue-400 transition">About Us</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition">Services</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition">Products</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-xl font-bold text-white mb-4">Contact Us</h3>
+        <!-- Load Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<ul class="space-y-2">
+  <!-- Email -->
+  <li class="flex items-center space-x-2">
+    <i class="fas fa-envelope text-gray-400"></i>
+    <span class="text-gray-400">Email:</span>
+    <a href="mailto:info@wonderdoor.com" class="hover:text-blue-400 transition">info@wonderdoor.com</a>
+  </li>
+
+  <!-- Phone -->
+  <li class="flex items-center space-x-2">
+    <i class="fas fa-phone text-gray-400"></i>
+    <span class="text-gray-400">Phone:</span>
+    <a href="tel:+123456789" class="hover:text-blue-400 transition">+123 456 789</a>
+  </li>
+
+  <!-- Address -->
+  <li class="flex items-center space-x-2">
+    <i class="fas fa-map-marker-alt text-gray-400"></i>
+    <span class="text-gray-400">Address:</span>
+    <span>123 Business Street, Phnom Penh, Cambodia</span>
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-gray-700 mt-8"></div>
+
+    <!-- Social Media & Copyright -->
+    <div class="flex flex-col md:flex-row justify-between items-center mt-8 space-y-4 md:space-y-0">
+      <!-- Social Media Icons -->
+      <div class="flex space-x-4">
+        <a href="#" class="text-gray-400 hover:text-blue-500 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 4.56v15.08c0 .88-.72 1.6-1.6 1.6h-4.79v-6.54h2.19l.32-2.45h-2.51v-1.56c0-.71.2-1.19 1.22-1.19h1.3v-2.3c-.23-.03-1.02-.1-1.95-.1-1.93 0-3.25 1.18-3.25 3.36v1.87h-2.19v2.45h2.19V21.2H1.6C.72 21.2 0 20.48 0 19.6V4.56C0 3.68.72 2.96 1.6 2.96h20.8c.88 0 1.6.72 1.6 1.6z" />
+          </svg>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-blue-500 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22.46 6c-.77.34-1.6.56-2.46.66a4.49 4.49 0 0 0 1.98-2.47 8.98 8.98 0 0 1-2.82 1.08 4.48 4.48 0 0 0-7.64 4.09 12.69 12.69 0 0 1-9.2-4.66 4.46 4.46 0 0 0-.61 2.26 4.47 4.47 0 0 0 1.99 3.71 4.41 4.41 0 0 1-2.03-.56v.06c0 2.18 1.54 4 3.57 4.41-.37.1-.77.16-1.17.16-.29 0-.57-.03-.85-.08a4.49 4.49 0 0 0 4.19 3.12 8.98 8.98 0 0 1-5.57 1.92A9 9 0 0 1 2 18.59 12.66 12.66 0 0 0 9.5 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54a8.35 8.35 0 0 0 2.05-2.13z" />
+          </svg>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-blue-500 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.04c-5.52 0-10 4.48-10 10.02s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm4.13 13.56c-.36.16-.74.28-1.13.36-.38.09-.77.12-1.15.12-.4 0-.77-.04-1.12-.11-.35-.07-.69-.18-1.01-.31-.32-.14-.61-.32-.89-.52s-.52-.43-.75-.67-.41-.5-.58-.76c-.16-.26-.3-.54-.42-.82-.11-.28-.2-.57-.28-.87-.07-.29-.12-.59-.16-.89-.04-.3-.06-.6-.06-.91 0-.31.02-.61.06-.91.04-.3.09-.6.16-.89.07-.29.16-.57.28-.85.12-.28.26-.55.42-.81s.35-.52.58-.76c.23-.24.47-.46.75-.67.27-.21.57-.39.89-.54.32-.15.66-.27 1.01-.35.35-.08.72-.12 1.12-.12.38 0 .77.04 1.15.11.39.08.77.2 1.13.36.36.15.7.34 1.02.55.32.22.62.46.9.72s.52.55.75.84c.23.29.43.59.6.91.17.31.31.64.43.96.12.32.22.64.3.98.07.33.13.67.17 1 .04.33.06.66.06.99 0 .31-.02.63-.06.94-.04.31-.09.62-.17.92-.07.3-.17.59-.3.87-.11.28-.26.55-.43.81s-.37.53-.6.76c-.23.23-.48.45-.75.65-.32.23-.66.42-1.02.56z" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-gray-400">
+        &copy; 2024 Wonder Door Industrial. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const totalSlides = slides.length;
+const slidesContainer = document.getElementById("slides");
+
+function showSlide(index) {
+// Ensure the index is within the bounds of the slides array
+if (index < 0) {
+  currentSlide = totalSlides - 1; // Go to the last slide if the index is negative
+} else if (index >= totalSlides) {
+  currentSlide = 0; // Go back to the first slide if the index exceeds the total
+} else {
+  currentSlide = index;
+}
+
+// Move the slides container to show the current slide
+slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+// Next button click
+document.getElementById("next").addEventListener("click", () => {
+showSlide(currentSlide + 1);
+});
+
+// Prev button click
+document.getElementById("prev").addEventListener("click", () => {
+showSlide(currentSlide - 1);
+});
+
+// Auto slide every 3 seconds
+setInterval(() => {
+showSlide(currentSlide + 1);
+}, 3000);
+
+// Initial display
+showSlide(currentSlide);
+
+ // Toggle the sliding search bar visibility when the search icon is clicked
+document.getElementById('search-icon').addEventListener('click', () => {
+document.getElementById('sliding-search-bar').classList.remove('hidden');
+document.getElementById('sliding-search-bar').classList.add('translate-y-0');
+});
+
+// Hide the sliding search bar if the user clicks outside or presses Escape
+document.addEventListener('click', (e) => {
+const searchBar = document.getElementById('sliding-search-bar');
+const searchIcon = document.getElementById('search-icon');
+if (!searchBar.contains(e.target) && !searchIcon.contains(e.target)) {
+  searchBar.classList.add('hidden');
+  searchBar.classList.remove('translate-y-0');
+}
+});
+
+// Close sliding search bar if user clicks the search button
+document.getElementById('search-slide-btn').addEventListener('click', () => {
+document.getElementById('sliding-search-bar').classList.add('hidden');
+document.getElementById('sliding-search-bar').classList.remove('translate-y-0');
+});
+
+// Function to handle search and redirect to a new page with the search query
+function handleSearch(inputId) {
+const searchTerm = document.getElementById(inputId).value.trim();  // Use the dynamic input ID
+
+if (searchTerm) {
+  // Redirect to the search results page and pass the search term as a query parameter
+  window.location.href = `search.html?query=${encodeURIComponent(searchTerm)}`;
+} else {
+  // Optionally, you can show an alert or handle empty search term
+  alert('Please enter a search term');
+}
+}
+
+// Add event listener to the main search button
+document.getElementById('search-main-btn').addEventListener('click', () => {
+handleSearch('search-main-input');
+});
+
+// Add event listener to the search button in the sliding search bar
+document.getElementById('search-slide-btn').addEventListener('click', () => {
+handleSearch('search-slide-input');
+});
+
+// Optional: If you want the "Enter" key to trigger the search
+document.getElementById('search-main-input').addEventListener('keydown', (e) => {
+if (e.key === 'Enter') {
+  handleSearch('search-main-input');
+}
+});
+
+document.getElementById('search-slide-input').addEventListener('keydown', (e) => {
+if (e.key === 'Enter') {
+  handleSearch('search-slide-input');
+}
+});
+
+</script>
+
+<script>
+    // Toggle the sliding search bar visibility when the search icon is clicked
+   document.getElementById('search-icon').addEventListener('click', () => {
+       document.getElementById('sliding-search-bar').classList.remove('hidden');
+       document.getElementById('sliding-search-bar').classList.add('translate-y-0');
+     });
+     
+     // Hide the sliding search bar if the user clicks outside or presses Escape
+     document.addEventListener('click', (e) => {
+       const searchBar = document.getElementById('sliding-search-bar');
+       const searchIcon = document.getElementById('search-icon');
+       if (!searchBar.contains(e.target) && !searchIcon.contains(e.target)) {
+         searchBar.classList.add('hidden');
+         searchBar.classList.remove('translate-y-0');
+       }
+     });
+     
+     // Close sliding search bar if user clicks the search button
+     document.getElementById('search-slide-btn').addEventListener('click', () => {
+       document.getElementById('sliding-search-bar').classList.add('hidden');
+       document.getElementById('sliding-search-bar').classList.remove('translate-y-0');
+     });
+     
+     // Function to handle search and redirect to a new page with the search query
+     function handleSearch(inputId) {
+       const searchTerm = document.getElementById(inputId).value.trim();  // Use the dynamic input ID
+     
+       if (searchTerm) {
+         // Redirect to the search results page and pass the search term as a query parameter
+         window.location.href = `search.html?query=${encodeURIComponent(searchTerm)}`;
+       } else {
+         // Optionally, you can show an alert or handle empty search term
+         alert('Please enter a search term');
+       }
+     }
+     
+     // Add event listener to the main search button
+     document.getElementById('search-main-btn').addEventListener('click', () => {
+       handleSearch('search-main-input');
+     });
+     
+     // Add event listener to the search button in the sliding search bar
+     document.getElementById('search-slide-btn').addEventListener('click', () => {
+       handleSearch('search-slide-input');
+     });
+     
+     // Optional: If you want the "Enter" key to trigger the search
+     document.getElementById('search-main-input').addEventListener('keydown', (e) => {
+       if (e.key === 'Enter') {
+         handleSearch('search-main-input');
+       }
+     });
+     
+     document.getElementById('search-slide-input').addEventListener('keydown', (e) => {
+       if (e.key === 'Enter') {
+         handleSearch('search-slide-input');
+       }
+     });
+     
+   </script>
+
+  <script>
+    // Parse query parameters from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const title = urlParams.get('title');
+    const price = parseFloat(urlParams.get('price')) || 0; // Default to 0 if invalid
+    const image = urlParams.get('image');
+    const description = urlParams.get('description');
+
+    // Set product details dynamically
+    document.getElementById('product-title').textContent = title;
+   
+    document.getElementById('product-image').src = image;
+    document.getElementById('product-description').textContent = description || 'No description available for this product.';
+  </script>
+
+</body>
+</html>
