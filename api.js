@@ -2,7 +2,7 @@
 const products = [
     {
       "id": 1,
-      "title": "Wonder Door",
+      "title": "Door",
       "price": 29.99,
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       "image": "https://scontent.fpnh18-5.fna.fbcdn.net/v/t39.30808-6/323463228_1358878644857822_8311225256044706450_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFFITUIuaBEwL_-TQKLoAfybCuBoEU35NJsK4GgRTfk0g5a6S13AGaUCyePbk47yKdeypv8Go98z9SrRzGHP2qK&_nc_ohc=0Vp4SwGommUQ7kNvgGBuqTk&_nc_oc=AdiMWGUlfmj5IhHjtyClKx1NFuqcTCdOVYpH6OQb3gLtJYKm9LFo8jw21mZKQDOQ-nA&_nc_zt=23&_nc_ht=scontent.fpnh18-5.fna&_nc_gid=A1j-k-ayqNIOmxPxs29kBhy&oh=00_AYCcUmcDmr8L-ooi0Jt41GKtHqYZ8KuOowHwsvIL0g94zw&oe=676854FD"
